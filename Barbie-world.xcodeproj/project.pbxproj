@@ -11,6 +11,7 @@
 		BD1CE5F82A0923450084EEC9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1CE5F72A0923450084EEC9 /* ContentView.swift */; };
 		BD1CE5FA2A0923460084EEC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD1CE5F92A0923460084EEC9 /* Assets.xcassets */; };
 		BD1CE5FD2A0923460084EEC9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD1CE5FC2A0923460084EEC9 /* Preview Assets.xcassets */; };
+		BD50CBB62A20F3250011CB56 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD50CBB52A20F3250011CB56 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		BD1CE5F92A0923460084EEC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD1CE5FC2A0923460084EEC9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BD1CE6032A0923DD0084EEC9 /* .gitignore.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = .gitignore.md; sourceTree = "<group>"; };
+		BD50CBB52A20F3250011CB56 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				BD1CE5F52A0923450084EEC9 /* Barbie_worldApp.swift */,
 				BD1CE5F72A0923450084EEC9 /* ContentView.swift */,
+				BD50CBB52A20F3250011CB56 /* DetailView.swift */,
 				BD1CE6032A0923DD0084EEC9 /* .gitignore.md */,
 				BD1CE5F92A0923460084EEC9 /* Assets.xcassets */,
 				BD1CE5FB2A0923460084EEC9 /* Preview Content */,
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD1CE5F82A0923450084EEC9 /* ContentView.swift in Sources */,
+				BD50CBB62A20F3250011CB56 /* DetailView.swift in Sources */,
 				BD1CE5F62A0923450084EEC9 /* Barbie_worldApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,9 +288,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "sofia.Barbie-world";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -313,9 +319,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "sofia.Barbie-world";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
