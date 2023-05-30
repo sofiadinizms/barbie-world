@@ -16,13 +16,13 @@ struct NomeDaOA: View {
     @State private var textFields2: String = ""
     var body: some View {
         GeometryReader { geometry in
-            ZStack (alignment: .topLeading){
-                
-                Color.gray
-                    .frame(width: geometry.size.width*0.6362, height: geometry.size.width*0.4)
+            ZStack(alignment: .leading) {
+                Rectangle()
+                    .opacity(0.3)
+                    .frame(width: 952, height: geometry.size.width*0.4)
                     .cornerRadius(16)
                     .border(Color.gray, width: 1)
-                
+                    
                 
                 
                 VStack(alignment: .leading){
@@ -36,7 +36,6 @@ struct NomeDaOA: View {
                             Image("button random")
                                 .resizable()
                                 .scaledToFit()
-                            
                                 .frame(width: 34,height:34)
                             
                         }
@@ -59,8 +58,8 @@ struct NomeDaOA: View {
                 
                 
             }
-            
         }
+        
         
         
         

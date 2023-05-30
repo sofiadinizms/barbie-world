@@ -12,6 +12,10 @@
 		BD1CE5FA2A0923460084EEC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD1CE5F92A0923460084EEC9 /* Assets.xcassets */; };
 		BD1CE5FD2A0923460084EEC9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD1CE5FC2A0923460084EEC9 /* Preview Assets.xcassets */; };
 		EC608B422A262CF4009AA382 /* NomeDaOA.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC608B412A262CF4009AA382 /* NomeDaOA.swift */; };
+		EC608B442A2637A0009AA382 /* TelaDaOA.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC608B432A2637A0009AA382 /* TelaDaOA.swift */; };
+		EC608B462A263825009AA382 /* SubOA.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC608B452A263825009AA382 /* SubOA.swift */; };
+		EC608B482A263A8A009AA382 /* IndicardorDeSucesso.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC608B472A263A8A009AA382 /* IndicardorDeSucesso.swift */; };
+		EC608B4A2A26447F009AA382 /* Progressao.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC608B492A26447F009AA382 /* Progressao.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		BD1CE5FC2A0923460084EEC9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BD1CE6032A0923DD0084EEC9 /* .gitignore.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = .gitignore.md; sourceTree = "<group>"; };
 		EC608B412A262CF4009AA382 /* NomeDaOA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NomeDaOA.swift; sourceTree = "<group>"; };
+		EC608B432A2637A0009AA382 /* TelaDaOA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaDaOA.swift; sourceTree = "<group>"; };
+		EC608B452A263825009AA382 /* SubOA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubOA.swift; sourceTree = "<group>"; };
+		EC608B472A263A8A009AA382 /* IndicardorDeSucesso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicardorDeSucesso.swift; sourceTree = "<group>"; };
+		EC608B492A26447F009AA382 /* Progressao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progressao.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +62,11 @@
 		BD1CE5F42A0923450084EEC9 /* Barbie-world */ = {
 			isa = PBXGroup;
 			children = (
+				EC608B492A26447F009AA382 /* Progressao.swift */,
+				EC608B472A263A8A009AA382 /* IndicardorDeSucesso.swift */,
 				EC608B412A262CF4009AA382 /* NomeDaOA.swift */,
+				EC608B452A263825009AA382 /* SubOA.swift */,
+				EC608B432A2637A0009AA382 /* TelaDaOA.swift */,
 				BD1CE5F52A0923450084EEC9 /* Barbie_worldApp.swift */,
 				BD1CE5F72A0923450084EEC9 /* ContentView.swift */,
 				BD1CE6032A0923DD0084EEC9 /* .gitignore.md */,
@@ -142,8 +154,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC608B442A2637A0009AA382 /* TelaDaOA.swift in Sources */,
+				EC608B482A263A8A009AA382 /* IndicardorDeSucesso.swift in Sources */,
 				BD1CE5F82A0923450084EEC9 /* ContentView.swift in Sources */,
+				EC608B4A2A26447F009AA382 /* Progressao.swift in Sources */,
 				BD1CE5F62A0923450084EEC9 /* Barbie_worldApp.swift in Sources */,
+				EC608B462A263825009AA382 /* SubOA.swift in Sources */,
 				EC608B422A262CF4009AA382 /* NomeDaOA.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,14 +289,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Barbie-world/Preview Content\"";
-				DEVELOPMENT_TEAM = Z4T4DUM2DD;
+				DEVELOPMENT_TEAM = 3MK6QXS2R9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -288,9 +303,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "sofia.Barbie-world";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -302,14 +319,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Barbie-world/Preview Content\"";
-				DEVELOPMENT_TEAM = Z4T4DUM2DD;
+				DEVELOPMENT_TEAM = 3MK6QXS2R9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -317,9 +333,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "sofia.Barbie-world";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

@@ -11,7 +11,8 @@ import SwiftUI
 struct Barbie_worldApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TelaDaOA()
+            
         }
     }
 }
