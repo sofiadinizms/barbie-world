@@ -31,6 +31,7 @@ struct CardView: View {
     @State private var textFields: [String] = []
     
     var body: some View {
+        
         ZStack {
             VStack {
                 Text(card)
@@ -42,17 +43,14 @@ struct CardView: View {
                 
                 ForEach(textFields.indices, id: \.self) { index in
                     if !textFields[index].isEmpty {
-                        HStack {
-                            TextField("Escreva aqui", text: Binding(
+                    TextField("Escreva aqui", text: Binding(
                                 get: { textFields[index] },
                                 set: { textFields[index] = $0 }
                             ))
                             .font(.custom("SF Pro Display", fixedSize: 14).weight(.regular))
                             .padding()
                             .textFieldStyle(PlainTextFieldStyle())
-                            .background(color)
-                            .cornerRadius(10)
-                        }
+                            .background(color).cornerRadius(10)
                     }
                 }
                 
@@ -61,26 +59,26 @@ struct CardView: View {
                     .padding()
                     .textFieldStyle(PlainTextFieldStyle())
                     .background(color).cornerRadius(10)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+//                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                 
                 Button(action: {
                     addTextField()
                 }) {
                     Label("Novo", systemImage: "plus")
                 }
-                .frame(maxWidth: 178, alignment: .bottomLeading)
+                .frame(maxWidth: 178, maxHeight: .infinity, alignment: .bottomLeading)
                 .padding()
                 .foregroundColor(.black)
                 .buttonStyle(PlainButtonStyle())
                 .cornerRadius(10)
-                .frame(maxWidth: .infinity, alignment: .bottomLeading)
                 
             }
             .padding(EdgeInsets(top: 16, leading: 24, bottom: 6, trailing: 24))
-            .frame(width: 226, height: .infinity, alignment: .topLeading)
+            .frame(width: 226, alignment: .topLeading)
             .background(color)
             .cornerRadius(10)
         }
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 0, alignment: .topLeading)
     }
     
     private func addTextField() {
