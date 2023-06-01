@@ -28,6 +28,7 @@ struct Progress: View {
             Text("Progressão")
                 .font(.system(size: 24))
                 .fontWeight(.bold)
+                .padding(.top, 60)
             ZStack{
                 Rectangle()
                     .frame(width: 952, height: 118)
@@ -66,7 +67,7 @@ struct Progress: View {
 
                     }
                 }
-                .frame(width: 610, height: 40)
+                .frame(width: 900, height: 40)
                 .padding(EdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0))
             }
             

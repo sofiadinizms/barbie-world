@@ -42,15 +42,31 @@ struct SubOA: View {
               TextField("nome da oa", text: $items[i].descript)
                 .textFieldStyle(.plain)
                 .foregroundColor(.black)
-
-
             }
             .padding()
             .background(Color.white)
             .cornerRadius(10)
             .border(.gray)
+            
 
           }
+            
+            Button(action: {
+                //
+            }) {
+                Text("􀅼  Criar novo")
+                    .font(.system(size: 20))
+                    .foregroundColor(.gray)
+                    .multilineTextAlignment(.center)
+                    
+                    
+            }
+            .buttonStyle(PlainButtonStyle())
+            .frame(width: 177, height: 52)
+            .background(Color.white)
+            .cornerRadius(10)
+            .shadow(color: Color.black.opacity(0.1), radius: 5)
+            
         }
         .frame(maxWidth: 952, maxHeight: 202)
 //        .padding()

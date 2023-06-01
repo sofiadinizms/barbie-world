@@ -17,6 +17,7 @@ struct CardsView: View {
                 Text("CEP + R")
                     .font(.system(size: 24))
                     .fontWeight(.bold)
+                    .padding(.top, 60)
                     
                     
                 

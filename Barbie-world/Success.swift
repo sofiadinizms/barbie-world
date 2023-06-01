@@ -15,6 +15,8 @@ struct Success: View {
             Text("Indicadores de Sucesso")
                 .font(.system(size: 24))
                 .fontWeight(.bold)
+                .padding(.top, 60)
+        
             HStack{
                 
                 NovoIndicador()
@@ -33,7 +35,6 @@ struct Success: View {
                 .buttonStyle(PlainButtonStyle())
                 .frame(width: 177, height: 52)
                 .background(Color.white)
-    //            .border(Color.white, width: 1)
                 .cornerRadius(10)
                 .shadow(color: Color.black.opacity(0.1), radius: 5)
                 Spacer()
