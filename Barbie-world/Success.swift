@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct IndicardorDeSucesso: View {
+struct Success: View {
     @State private var text: String = ""
     
     var body: some View {
@@ -33,9 +33,9 @@ struct IndicardorDeSucesso: View {
                 .buttonStyle(PlainButtonStyle())
                 .frame(width: 177, height: 52)
                 .background(Color.white)
-                .opacity(0.3)
     //            .border(Color.white, width: 1)
                 .cornerRadius(10)
+                .shadow(color: Color.black.opacity(0.1), radius: 5)
                 Spacer()
             }
         }
@@ -51,9 +51,11 @@ struct NovoIndicador: View {
             ZStack{
                 Rectangle()
                     .frame(height: 52)
+                    .foregroundColor(.white)
                     .cornerRadius(10)
 //                    .border(Color.white, width: 1)
                     .opacity(0.6)
+                    .shadow(color: Color.black.opacity(0.1), radius: 5)
                
                 HStack{
                     Text("🎯")
@@ -74,6 +76,6 @@ struct NovoIndicador: View {
 
 struct IndicardorDeSucesso_Previews: PreviewProvider {
     static var previews: some View {
-        IndicardorDeSucesso()
+        Success()
     }
 }

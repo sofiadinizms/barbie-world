@@ -12,13 +12,10 @@ struct DetailView: View {
         ScrollView(.vertical, showsIndicators: false){
                 
             VStack(alignment: .center){
-                    NomeDaOA()
-//                    Spacer()
+                    OAname()
                     SubOA()
-//                    Spacer()
-                    IndicardorDeSucesso()
-//                    Spacer()
-                    Progressao()
+                    Success()
+                Progress(isCompleted: true)
                     Spacer()
 //
                 }
