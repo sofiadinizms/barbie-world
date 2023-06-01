@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SubOA: View {
+struct SubOAItems: View {
     
     struct SubOA {
       var descript: String
@@ -66,6 +66,6 @@ func changeValue(val: Bool) -> Bool {
 struct SubOA_Previews: PreviewProvider {
     static var previews: some View {
         @State var c = false
-        SubOA()
+        SubOAItems()
     }
 }

@@ -14,7 +14,7 @@ struct DetailView: View {
             VStack(alignment: .center){
                     NomeDaOA()
 //                    Spacer()
-                    SubOA()
+                    SubOAItems()
 //                    Spacer()
                     IndicardorDeSucesso()
 //                    Spacer()
