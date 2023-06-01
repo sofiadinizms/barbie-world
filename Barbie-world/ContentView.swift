@@ -72,7 +72,7 @@ struct ContentView: View {
                     
                 }
             }
-            
+
         }
         .onAppear() {
             NotificationManager.instance.requestAuthorization()
@@ -99,6 +99,7 @@ struct ContentView: View {
             )
             
             UIApplication.shared.applicationIconBadgeNumber = 0
+
         }
     }
 }
