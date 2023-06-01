@@ -36,11 +36,10 @@ struct IndicardorDeSucesso: View {
                 .opacity(0.3)
     //            .border(Color.white, width: 1)
                 .cornerRadius(10)
-                .padding(.trailing, 20)
+                Spacer()
             }
         }
-        
-        
+        .frame(width: 952, height: 202)
         
     }
 }
@@ -63,7 +62,6 @@ struct NovoIndicador: View {
                     
                     TextField("Indicador de sucesso", text: $text)
                         .textFieldStyle(PlainTextFieldStyle())
-                        .padding()
                         .font(.system(size: 20))
                         .foregroundColor(.black)
                 }

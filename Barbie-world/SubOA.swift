@@ -26,7 +26,8 @@ struct SubOA: View {
       SubOA(descript: "ddd4", done: false),
       SubOA(descript: "ddd4", done: false),
       SubOA(descript: "ddd4", done: false),
-      SubOA(descript: "ddd4", done: false)
+      SubOA(descript: "ddd4", done: false),
+      
     ]
     var body: some View {
         HStack {
@@ -51,7 +52,8 @@ struct SubOA: View {
 
           }
         }
-        .padding()
+        .frame(maxWidth: 952, maxHeight: 202)
+//        .padding()
     }
 }
 

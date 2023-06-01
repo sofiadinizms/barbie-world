@@ -20,6 +20,7 @@ struct Progressao: View {
 //                    .border(Color.white, width: 1)
                 .opacity(0.6)
         }
+        .frame(width: 952, height: 202)
     }
 }
 

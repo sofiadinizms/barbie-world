@@ -9,27 +9,27 @@ import SwiftUI
 
 struct TelaDaOA: View {
     var body: some View {
-//        ScrollView(.vertical){
+        ScrollView(.vertical, showsIndicators: false){
                 
-                VStack{
+            VStack(alignment: .center){
                     NomeDaOA()
-                    Spacer()
+//                    Spacer()
                     SubOA()
-                    Spacer()
+//                    Spacer()
                     IndicardorDeSucesso()
-                    Spacer()
+//                    Spacer()
                     Progressao()
-                    
+                    Spacer()
+//                    
                 }
-                
-//        }
-        
+        }
     }
 }
 
 struct TelaDaOA_Previews: PreviewProvider {
     static var previews: some View {
         TelaDaOA()
+            
     }
 }
 

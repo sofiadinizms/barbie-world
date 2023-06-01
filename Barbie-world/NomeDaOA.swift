@@ -15,11 +15,10 @@ struct NomeDaOA: View {
     @State private var textFields1: String = ""
     @State private var textFields2: String = ""
     var body: some View {
-        GeometryReader { geometry in
-            ZStack(alignment: .leading) {
+            ZStack {
                 Rectangle()
                     .opacity(0.3)
-                    .frame(width: 952, height: geometry.size.width*0.4)
+                    .frame(width: 952, height: 202)
                     .cornerRadius(16)
                     .border(Color.gray, width: 1)
                     
@@ -42,6 +41,7 @@ struct NomeDaOA: View {
                         .padding(.bottom, 3)
                         .buttonStyle(PlainButtonStyle())
                     }
+                    Spacer()
                     TextField("Nome da OA", text: $textFields1)
                         .textFieldStyle(PlainTextFieldStyle())
                         .font(.system(size: 32))
@@ -50,17 +50,16 @@ struct NomeDaOA: View {
                         .textFieldStyle(PlainTextFieldStyle())
                         .font(.system(size: 16))
                         .foregroundColor(.black)
+                        .padding(.bottom, 26)
                     
                 }
                 .padding(.leading, 26)
-                .padding(.top, 22)
-                .padding(.bottom, 30)
                 
                 
             }
-        }
-        
-        
+            .frame(width: 952, height: 202)
+            .padding(.top, 84)
+
         
         
     }}
