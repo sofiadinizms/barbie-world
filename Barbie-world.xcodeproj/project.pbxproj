@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		643C1E262A280F59007028B4 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643C1E252A280F59007028B4 /* DataController.swift */; };
 		643C1E282A28BF73007028B4 /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643C1E272A28BF73007028B4 /* CardsView.swift */; };
-		643C1E2A2A28C290007028B4 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643C1E292A28C290007028B4 /* SwiftUIView.swift */; };
 		644A02C32A280B1F00CDFE21 /* OADataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 644A02C12A280B1F00CDFE21 /* OADataModel.xcdatamodeld */; };
 		BD1CE5F62A0923450084EEC9 /* Barbie_worldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1CE5F52A0923450084EEC9 /* Barbie_worldApp.swift */; };
 		BD1CE5F82A0923450084EEC9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1CE5F72A0923450084EEC9 /* ContentView.swift */; };
@@ -21,7 +20,6 @@
 /* Begin PBXFileReference section */
 		643C1E252A280F59007028B4 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		643C1E272A28BF73007028B4 /* CardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
-		643C1E292A28C290007028B4 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		644A02C22A280B1F00CDFE21 /* OADataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OADataModel.xcdatamodel; sourceTree = "<group>"; };
 		BD1CE5F22A0923450084EEC9 /* Barbie-world.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Barbie-world.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD1CE5F52A0923450084EEC9 /* Barbie_worldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barbie_worldApp.swift; sourceTree = "<group>"; };
@@ -65,7 +63,6 @@
 				BD1CE5F52A0923450084EEC9 /* Barbie_worldApp.swift */,
 				BD1CE5F72A0923450084EEC9 /* ContentView.swift */,
 				643C1E272A28BF73007028B4 /* CardsView.swift */,
-				643C1E292A28C290007028B4 /* SwiftUIView.swift */,
 				643C1E252A280F59007028B4 /* DataController.swift */,
 				BD50CBB52A20F3250011CB56 /* DetailView.swift */,
 				644A02C12A280B1F00CDFE21 /* OADataModel.xcdatamodeld */,
@@ -155,7 +152,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				643C1E262A280F59007028B4 /* DataController.swift in Sources */,
-				643C1E2A2A28C290007028B4 /* SwiftUIView.swift in Sources */,
 				BD1CE5F82A0923450084EEC9 /* ContentView.swift in Sources */,
 				643C1E282A28BF73007028B4 /* CardsView.swift in Sources */,
 				BD50CBB62A20F3250011CB56 /* DetailView.swift in Sources */,
