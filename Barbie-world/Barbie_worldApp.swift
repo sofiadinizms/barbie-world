@@ -11,15 +11,10 @@ import SwiftUI
 struct Barbie_worldApp: App {
     var body: some Scene {
         WindowGroup {
-<<<<<<< HEAD
-            TelaDaOA()
-            
-=======
             NavigationStack{
                 ContentView()
                 
             }
->>>>>>> main
         }
     }
 }
