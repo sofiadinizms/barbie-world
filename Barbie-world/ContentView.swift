@@ -14,15 +14,19 @@ struct ContentView: View {
     var body: some View {
         ZStack{
             
-            if !hasOA{
+            if hasOA{
+                
+                Color(.windowBackgroundColor)
+                
+            } else {
                 
                 Color(red:255.0, green: 255.0, blue: 255.0)
-            } else {
-                Color(.windowBackgroundColor)
             }
             
             ScrollView(.vertical, showsIndicators: false){
+                
                 if hasOA{
+                    
                     FilledHomeView()
                     
                 } else {
