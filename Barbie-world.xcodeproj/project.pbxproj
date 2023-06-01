@@ -173,11 +173,9 @@
 				BD1CE5F82A0923450084EEC9 /* ContentView.swift in Sources */,
 				EC608B4A2A26447F009AA382 /* Progressao.swift in Sources */,
 				BD50CBB62A20F3250011CB56 /* DetailView.swift in Sources */,
-				BD1CE5F62A0923450084EEC9 /* Barbie_worldApp.swift in Sources */,
 				EC608B462A263825009AA382 /* SubOA.swift in Sources */,
 				EC608B422A262CF4009AA382 /* NomeDaOA.swift in Sources */,
 				BD50CBB82A2634ED0011CB56 /* OACard.swift in Sources */,
-				BD50CBB62A20F3250011CB56 /* DetailView.swift in Sources */,
 				BD50CBC02A2794160011CB56 /* FilledHomeView.swift in Sources */,
 				BD50CBBE2A2792C30011CB56 /* EmptyHomeView.swift in Sources */,
 				BD1CE5F62A0923450084EEC9 /* Barbie_worldApp.swift in Sources */,
@@ -308,10 +306,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Barbie-world/Preview Content\"";
-				DEVELOPMENT_TEAM = 3MK6QXS2R9;
+				DEVELOPMENT_TEAM = Z4T4DUM2DD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -338,10 +337,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Barbie-world/Preview Content\"";
-				DEVELOPMENT_TEAM = 3MK6QXS2R9;
+				DEVELOPMENT_TEAM = Z4T4DUM2DD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
