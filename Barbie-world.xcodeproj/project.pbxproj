@@ -20,6 +20,11 @@
 
 		BD50CBB62A20F3250011CB56 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD50CBB52A20F3250011CB56 /* DetailView.swift */; };
 
+		BD50CBB82A2634ED0011CB56 /* OACard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD50CBB72A2634ED0011CB56 /* OACard.swift */; };
+		BD50CBBA2A277E7B0011CB56 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD50CBB92A277E7B0011CB56 /* ColorExtension.swift */; };
+		BD50CBBC2A2789380011CB56 /* CongratulationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD50CBBB2A2789380011CB56 /* CongratulationsView.swift */; };
+		BD50CBBE2A2792C30011CB56 /* EmptyHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD50CBBD2A2792C30011CB56 /* EmptyHomeView.swift */; };
+		BD50CBC02A2794160011CB56 /* FilledHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD50CBBF2A2794160011CB56 /* FilledHomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +43,11 @@
 
 		BD50CBB52A20F3250011CB56 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 
+		BD50CBB72A2634ED0011CB56 /* OACard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OACard.swift; sourceTree = "<group>"; };
+		BD50CBB92A277E7B0011CB56 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		BD50CBBB2A2789380011CB56 /* CongratulationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationsView.swift; sourceTree = "<group>"; };
+		BD50CBBD2A2792C30011CB56 /* EmptyHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyHomeView.swift; sourceTree = "<group>"; };
+		BD50CBBF2A2794160011CB56 /* FilledHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilledHomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,11 +85,16 @@
 				EC608B412A262CF4009AA382 /* NomeDaOA.swift */,
 				EC608B452A263825009AA382 /* SubOA.swift */,
 				EC608B432A2637A0009AA382 /* TelaDaOA.swift */,
+				BD50CBB52A20F3250011CB56 /* DetailView.swift */,
 				BD1CE5F52A0923450084EEC9 /* Barbie_worldApp.swift */,
 				BD1CE5F72A0923450084EEC9 /* ContentView.swift */,
-				BD50CBB52A20F3250011CB56 /* DetailView.swift */,
+				BD50CBBF2A2794160011CB56 /* FilledHomeView.swift */,
+				BD50CBBD2A2792C30011CB56 /* EmptyHomeView.swift */,
 				BD1CE6032A0923DD0084EEC9 /* .gitignore.md */,
+				BD50CBBB2A2789380011CB56 /* CongratulationsView.swift */,
+				BD50CBB92A277E7B0011CB56 /* ColorExtension.swift */,
 				BD1CE5F92A0923460084EEC9 /* Assets.xcassets */,
+				BD50CBB72A2634ED0011CB56 /* OACard.swift */,
 				BD1CE5FB2A0923460084EEC9 /* Preview Content */,
 			);
 			path = "Barbie-world";
@@ -174,6 +189,13 @@
 				BD1CE5F62A0923450084EEC9 /* Barbie_worldApp.swift in Sources */,
 				EC608B462A263825009AA382 /* SubOA.swift in Sources */,
 				EC608B422A262CF4009AA382 /* NomeDaOA.swift in Sources */,
+				BD50CBB82A2634ED0011CB56 /* OACard.swift in Sources */,
+				BD50CBB62A20F3250011CB56 /* DetailView.swift in Sources */,
+				BD50CBC02A2794160011CB56 /* FilledHomeView.swift in Sources */,
+				BD50CBBE2A2792C30011CB56 /* EmptyHomeView.swift in Sources */,
+				BD1CE5F62A0923450084EEC9 /* Barbie_worldApp.swift in Sources */,
+				BD50CBBC2A2789380011CB56 /* CongratulationsView.swift in Sources */,
+				BD50CBBA2A277E7B0011CB56 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
