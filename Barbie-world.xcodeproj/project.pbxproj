@@ -21,6 +21,7 @@
 		EC608B462A263825009AA382 /* SubOA.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC608B452A263825009AA382 /* SubOA.swift */; };
 		EC608B482A263A8A009AA382 /* Success.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC608B472A263A8A009AA382 /* Success.swift */; };
 		EC608B4A2A26447F009AA382 /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC608B492A26447F009AA382 /* Progress.swift */; };
+		EC9AFC942A28E03B00514BEC /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AFC932A28E03B00514BEC /* CardsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		EC608B452A263825009AA382 /* SubOA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubOA.swift; sourceTree = "<group>"; };
 		EC608B472A263A8A009AA382 /* Success.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Success.swift; sourceTree = "<group>"; };
 		EC608B492A26447F009AA382 /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
+		EC9AFC932A28E03B00514BEC /* CardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		BD1CE5F42A0923450084EEC9 /* Barbie-world */ = {
 			isa = PBXGroup;
 			children = (
+				EC9AFC932A28E03B00514BEC /* CardsView.swift */,
 				EC608B492A26447F009AA382 /* Progress.swift */,
 				EC608B472A263A8A009AA382 /* Success.swift */,
 				EC608B412A262CF4009AA382 /* OAname.swift */,
@@ -175,6 +178,7 @@
 				BD50CBB62A20F3250011CB56 /* DetailView.swift in Sources */,
 				BD1CE5F62A0923450084EEC9 /* Barbie_worldApp.swift in Sources */,
 				EC608B462A263825009AA382 /* SubOA.swift in Sources */,
+				EC9AFC942A28E03B00514BEC /* CardsView.swift in Sources */,
 				EC608B422A262CF4009AA382 /* OAname.swift in Sources */,
 				BD50CBB82A2634ED0011CB56 /* OACard.swift in Sources */,
 				BD50CBB62A20F3250011CB56 /* DetailView.swift in Sources */,
