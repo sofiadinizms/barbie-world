@@ -13,8 +13,11 @@ struct Barbie_worldApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, dataController.container.viewContext)
+            NavigationStack{
+                ContentView()
+                  .environment(\.managedObjectContext, dataController.container.viewContext)
+                
+            }
         }
     }
 }

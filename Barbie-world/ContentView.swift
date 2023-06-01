@@ -8,18 +8,41 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var hasOA: Bool = true
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            
+            if hasOA{
+                
+                Color(.windowBackgroundColor)
+                
+            } else {
+                
+                Color(red:255.0, green: 255.0, blue: 255.0)
+            }
+            
+            ScrollView(.vertical, showsIndicators: false){
+                
+                if hasOA{
+                    
+                    FilledHomeView()
+                    
+                } else {
+                    
+                   EmptyHomeView()
+                    
+                }
+            }
+            
+        }
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
-}
-
-
-var body: some View {
-    Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
 }
