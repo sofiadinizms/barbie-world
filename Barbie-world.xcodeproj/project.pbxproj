@@ -17,6 +17,10 @@
 		BD50CBBC2A2789380011CB56 /* CongratulationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD50CBBB2A2789380011CB56 /* CongratulationsView.swift */; };
 		BD50CBBE2A2792C30011CB56 /* EmptyHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD50CBBD2A2792C30011CB56 /* EmptyHomeView.swift */; };
 		BD50CBC02A2794160011CB56 /* FilledHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD50CBBF2A2794160011CB56 /* FilledHomeView.swift */; };
+		EC608B422A262CF4009AA382 /* NomeDaOA.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC608B412A262CF4009AA382 /* NomeDaOA.swift */; };
+		EC608B462A263825009AA382 /* SubOA.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC608B452A263825009AA382 /* SubOA.swift */; };
+		EC608B482A263A8A009AA382 /* IndicardorDeSucesso.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC608B472A263A8A009AA382 /* IndicardorDeSucesso.swift */; };
+		EC608B4A2A26447F009AA382 /* Progressao.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC608B492A26447F009AA382 /* Progressao.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		BD50CBBB2A2789380011CB56 /* CongratulationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationsView.swift; sourceTree = "<group>"; };
 		BD50CBBD2A2792C30011CB56 /* EmptyHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyHomeView.swift; sourceTree = "<group>"; };
 		BD50CBBF2A2794160011CB56 /* FilledHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilledHomeView.swift; sourceTree = "<group>"; };
+		EC608B412A262CF4009AA382 /* NomeDaOA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NomeDaOA.swift; sourceTree = "<group>"; };
+		EC608B452A263825009AA382 /* SubOA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubOA.swift; sourceTree = "<group>"; };
+		EC608B472A263A8A009AA382 /* IndicardorDeSucesso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicardorDeSucesso.swift; sourceTree = "<group>"; };
+		EC608B492A26447F009AA382 /* Progressao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progressao.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,10 @@
 		BD1CE5F42A0923450084EEC9 /* Barbie-world */ = {
 			isa = PBXGroup;
 			children = (
+				EC608B492A26447F009AA382 /* Progressao.swift */,
+				EC608B472A263A8A009AA382 /* IndicardorDeSucesso.swift */,
+				EC608B412A262CF4009AA382 /* NomeDaOA.swift */,
+				EC608B452A263825009AA382 /* SubOA.swift */,
 				BD50CBB52A20F3250011CB56 /* DetailView.swift */,
 				BD1CE5F52A0923450084EEC9 /* Barbie_worldApp.swift */,
 				BD1CE5F72A0923450084EEC9 /* ContentView.swift */,
@@ -157,7 +169,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC608B482A263A8A009AA382 /* IndicardorDeSucesso.swift in Sources */,
 				BD1CE5F82A0923450084EEC9 /* ContentView.swift in Sources */,
+				EC608B4A2A26447F009AA382 /* Progressao.swift in Sources */,
+				BD50CBB62A20F3250011CB56 /* DetailView.swift in Sources */,
+				BD1CE5F62A0923450084EEC9 /* Barbie_worldApp.swift in Sources */,
+				EC608B462A263825009AA382 /* SubOA.swift in Sources */,
+				EC608B422A262CF4009AA382 /* NomeDaOA.swift in Sources */,
 				BD50CBB82A2634ED0011CB56 /* OACard.swift in Sources */,
 				BD50CBB62A20F3250011CB56 /* DetailView.swift in Sources */,
 				BD50CBC02A2794160011CB56 /* FilledHomeView.swift in Sources */,
@@ -293,14 +311,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Barbie-world/Preview Content\"";
-				DEVELOPMENT_TEAM = L45GPKVRUG;
+				DEVELOPMENT_TEAM = 3MK6QXS2R9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -324,14 +341,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Barbie-world/Preview Content\"";
-				DEVELOPMENT_TEAM = L45GPKVRUG;
+				DEVELOPMENT_TEAM = 3MK6QXS2R9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
