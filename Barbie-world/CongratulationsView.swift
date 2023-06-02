@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CongratulationsView: View {
+    @AppStorage("showCongratulations") var showCongratulations: Bool = false
+    
     var body: some View {
         VStack {
             
@@ -27,7 +29,9 @@ struct CongratulationsView: View {
                 .opacity(0.4)
             
             
-            NavigationLink(destination: ContentView(), label: {
+            Button(action: {
+                showCongratulations = false
+            }, label: {
                 Image("continueButton")
                     .resizable()
                     .scaledToFit()

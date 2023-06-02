@@ -9,94 +9,120 @@ import SwiftUI
 
 struct OACard: View {
     
-    var completed: Int
-    var total: Int
+    var oa : FetchedResults<OA>.Element
+    
+    var completed: Int = 0
+    @State var total: Int
     
     var isCompleted: Bool
     var barColor: Color
+    var title : String
+    var subtitle : String
+    var icon : String
     
-    init(isCompleted: Bool) {
-        self.completed = 4
-        self.total = 10
-        self.isCompleted = isCompleted
+    init(oa: OA) {
+        self.completed = Int(oa.completedNumber)
+        self.total = oa.subOAs?.count ?? 0
+        self.isCompleted = oa.isCompleted
         
         self.barColor = isCompleted ? .theme.customGreen : .theme.customBlue
-        
+        self.icon = oa.icon ?? ""
+        self.title = oa.title ??  ""
+        self.subtitle = oa.subtitle ?? ""
+        self.oa = oa
     }
     
     
     var body: some View {
         
-                VStack(alignment: .center, spacing: 0.0){
-                    
-                    HStack(){
-                        Text("😍")
-                            .font(.custom("SF Pro Display", size: 50))
-                            .frame(alignment: .leading)
-                        
-                        VStack(alignment: .leading){
-                            Text("Psicologia das cores")
-                                .font(.custom("SF Pro Display", size: 25))
-                                .fontWeight(.bold)
-                            Text("Descrição do objetivo de aprendizado")
-                                .font(.custom("SF Pro Display", size: 16))
-                                .fontWeight(.light)
-                                .opacity(0.6)
-                        }
-                        
-                    }.frame(width: 610, height: 40, alignment: .leading)
-                    //                .background(.red)
-                        .padding(EdgeInsets(top: 30, leading: 0, bottom: 0, trailing: 0))
-                    
-                    HStack (spacing: -0.8){
-                        ForEach(0...10, id:\.self){i in
-                            if i <= completed && i < total{
-                                Circle()
-                                    .foregroundColor(barColor)
-                                    .frame(width: 20, height: 20)
-                                Rectangle()
-                                    .foregroundColor(barColor)
-                                    .frame(width: 40, height: 6)
-                            } else if i <= completed && i == total {
-                                Circle()
-                                    .foregroundColor(barColor)
-                                    .frame(width: 20, height: 20)
-                            } else if i > completed && i < total{
-                                Circle()
-                                    .foregroundColor(.black)
-                                    .opacity(0.1)
-                                    .frame(width: 20, height: 20)
-                                Rectangle()
-                                    .foregroundColor(.black)
-                                    .opacity(0.1)
-                                    .frame(width: 40, height: 6)
-                            } else if i > completed && i == total{
-                                Circle()
-                                    .foregroundColor(.black)
-                                    .opacity(0.1)
-                                    .frame(width: 20, height: 20)
-                            }
-                            
-                        }
-                    }
-                    .frame(width: 610, height: 40)
-                    .padding(EdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0))
-                    
-//                                .background(.blue)
+        VStack(alignment: .center, spacing: 0.0){
+            
+            HStack(){
+                Text(icon)
+                    .font(.custom("SF Pro Display", size: 50))
+                    .frame(alignment: .leading)
+                
+                VStack(alignment: .leading){
+                    Text(title)
+                        .font(.custom("SF Pro Display", size: 25))
+                        .fontWeight(.bold)
+                    Text(subtitle)
+                        .font(.custom("SF Pro Display", size: 16))
+                        .fontWeight(.light)
+                        .opacity(0.6)
                 }
-
-            .frame(width: 700, height: 150)
-            .background(.white)
-            .border(.black.opacity(0.1))
-            .cornerRadius(15)
-            .shadow(color: Color.black.opacity(0.1), radius: 5)
+                
+            }.frame(width: 610, height: 40, alignment: .leading)
+            //                .background(.red)
+                .padding(EdgeInsets(top: 30, leading: 0, bottom: 0, trailing: 0))
+            
+            HStack (spacing: -0.8){
+                ForEach(0...total, id:\.self){i in
+                    if ((i == 0) && (completed > i)) {
+                        Circle()
+                            .foregroundColor(barColor)
+                            .frame(width: 20, height: 20)
+                    } else if ((i == 0) && (completed == 0)) {
+                        Circle()
+                            .foregroundColor(.black)
+                            .opacity(0.1)
+                            .frame(width: 20, height: 20)
+                    } else if i <= completed && i < total{
+                        Rectangle()
+                            .foregroundColor(barColor)
+                            .frame(width: 40, height: 6)
+                        Circle()
+                            .foregroundColor(barColor)
+                            .frame(width: 20, height: 20)
+                    } else if i <= completed && i == total {
+                        Rectangle()
+                            .foregroundColor(barColor)
+                            .frame(width: 40, height: 6)
+                        Circle()
+                            .foregroundColor(barColor)
+                            .frame(width: 20, height: 20)
+                    } else if i > completed && i < total{
+                        Rectangle()
+                            .foregroundColor(.black)
+                            .opacity(0.1)
+                            .frame(width: 40, height: 6)
+                        Circle()
+                            .foregroundColor(.black)
+                            .opacity(0.1)
+                            .frame(width: 20, height: 20)
+                    } else if i > completed && i == total{
+                        Rectangle()
+                            .foregroundColor(.black)
+                            .opacity(0.1)
+                            .frame(width: 40, height: 6)
+                        Circle()
+                            .foregroundColor(.black)
+                            .opacity(0.1)
+                            .frame(width: 20, height: 20)
+                    }
+                    
+                }
+            }
+            .frame(width: 610, height: 40)
+            .padding(EdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0))
+            
+            //                                .background(.blue)
+        }
+        .frame(width: 700, height: 150)
+        .background(.white)
+        .border(.black.opacity(0.1))
+        .cornerRadius(15)
+        .shadow(color: Color.black.opacity(0.1), radius: 5)
+        .onAppear {
+            self.total = oa.subOAs?.count ?? 0
+        }
         
         
     }
 }
 
-struct OACard_Previews: PreviewProvider {
-    static var previews: some View {
-        OACard(isCompleted: true)
-    }
-}
+//struct OACard_Previews: PreviewProvider {
+//    static var previews: some View {
+//        OACard(isCompleted: true)
+//    }
+//}

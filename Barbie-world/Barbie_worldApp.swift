@@ -9,15 +9,13 @@ import SwiftUI
 
 @main
 struct Barbie_worldApp: App {
+    
     @StateObject private var dataController = DataController()
     
     var body: some Scene {
         WindowGroup {
-            NavigationStack{
                 ContentView()
-                  .environment(\.managedObjectContext, dataController.container.viewContext)
-                
-            }
+                    .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
 }

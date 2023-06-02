@@ -5,15 +5,16 @@
 //  Created by Jpsmor on 31/05/23.
 //
 
-import Foundation
+import SwiftUI
 import CoreData
 
 class DataController : ObservableObject {
+    @AppStorage("showCongratulations") var showCongratulations: Bool = false
     
-    let container = NSPersistentContainer(name: "OADataModel")
+    var container = NSPersistentContainer(name: "OAsDataModel")
     
     init() {
-        container.loadPersistentStores { desc, error in
+        container.loadPersistentStores { description, error in
             if let error = error {
                 print("Failed to load the data \(error.localizedDescription)")
             }
@@ -32,22 +33,92 @@ class DataController : ObservableObject {
     
     //MARK: - Adicionar, editar e remover OAs
     
-    func addOA(title: String, subtitle: String, icon: String , context: NSManagedObjectContext) {
+    func addOA(title: String, subtitle: String, icon: String , context: NSManagedObjectContext, subOAs: [SubOAItem], ceprs : [CardView], evidences: [successParameter] ) {
         let oa = OA(context: context)
         oa.id = UUID()
         oa.title = title
         oa.icon = icon
         oa.date = Date()
+        if (subOAs.count) == (subOAs.filter{$0.done}.count) {
+            oa.isCompleted = true
+        } else {
+            oa.isCompleted = false
+        }
+        oa.completedNumber = Int16(subOAs.filter{$0.done}.count)
         
         save(context: context)
+        
+        for subOA in subOAs {
+            addSubOA(oa: oa, name: subOA.descript, isCompleted: subOA.done, context: context)
+        }
+        
+        for view in ceprs {
+            let category = view.card
+            
+            for cepr in view.textFields {
+                addCEPR(oa: oa, name: cepr, category: category, context: context)
+            }
+        }
+        
+        for evidence in evidences {
+            addEvidence(oa: oa, name: evidence.name, context: context)
+        }
+        
+        save(context: context)
+    
     }
     
-    func editOA(oa: OA, title: String, subtitle: String, icon: String, context: NSManagedObjectContext) {
+    func editOA(oa: OA, title: String, subtitle: String, icon: String , context: NSManagedObjectContext, subOAs: [SubOAItem], ceprs : [CardView] , evidences: [successParameter]) {
         oa.title = title
         oa.subtitle = subtitle
         oa.icon = icon
+        if let suboaitems = oa.subOAs?.allObjects as? [SubOA] {
+            for subOA in suboaitems {
+                context.delete(subOA)
+            }
+        }
+        if let cepritems = oa.ceprs?.allObjects as? [CEPR] {
+            for cepr in cepritems {
+                context.delete(cepr)
+            }
+        }
+        if let evidenceitems = oa.evidencies?.allObjects as? [Evidence] {
+            for evidence in evidenceitems {
+                context.delete(evidence)
+            }
+        }
+        if (subOAs.count) == (subOAs.filter{$0.done}.count) {
+            if oa.isCompleted == false {
+                oa.isCompleted = true
+                showCongratulations = true
+            } else {
+                oa.isCompleted = true
+            }
+        } else {
+            oa.isCompleted = false
+        }
+        oa.completedNumber = Int16(subOAs.filter{$0.done}.count)
         
         save(context: context)
+        
+        for subOA in subOAs {
+            addSubOA(oa: oa, name: subOA.descript, isCompleted: subOA.done, context: context)
+        }
+        
+        for view in ceprs {
+            let category = view.card
+            
+            for cepr in view.textFields {
+                addCEPR(oa: oa, name: cepr, category: category, context: context)
+            }
+        }
+        
+        for evidence in evidences {
+            addEvidence(oa: oa, name: evidence.name, context: context)
+        }
+        
+        save(context: context)
+    
     }
     
     func deleteOA(oa: OA, context: NSManagedObjectContext) {
@@ -110,11 +181,12 @@ class DataController : ObservableObject {
     
     //MARK: - Adicionar, editar e remover indicador de sucesso
     
-    func addEvidence(name: String, context: NSManagedObjectContext) {
+    func addEvidence(oa: OA, name: String, context: NSManagedObjectContext) {
         let evidence = Evidence(context: context)
         evidence.id = UUID()
         evidence.name = name
         evidence.date = Date()
+        evidence.mainOA = oa
         
         save(context: context)
     }

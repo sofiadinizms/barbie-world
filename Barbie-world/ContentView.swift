@@ -7,11 +7,10 @@
 
 import SwiftUI
 import UserNotifications
-import UIKit
 
 class NotificationManager {
     static let instance = NotificationManager()
-
+    
     func requestAuthorization() {
         let options: UNAuthorizationOptions = [.alert, .sound, .badge]
         UNUserNotificationCenter.current().requestAuthorization(options: options) { success, error in
@@ -22,20 +21,20 @@ class NotificationManager {
             }
         }
     }
-
+    
     func scheduleNotification(title: String, subtitle: String, hour: Int, minute: Int) {
         let content = UNMutableNotificationContent()
         content.title = title
         content.subtitle = subtitle
         content.sound = .default
         content.badge = 1
-
+        
         var dateComponents = DateComponents()
         dateComponents.hour = hour
         dateComponents.minute = minute
-
+        
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-
+        
         let request = UNNotificationRequest(
             identifier: UUID().uuidString,
             content: content,
@@ -45,34 +44,32 @@ class NotificationManager {
 }
 
 struct ContentView: View {
+    @AppStorage("showCongratulations") var showCongratulations: Bool = false
     
-    @State var hasOA: Bool = true
+    @Environment(\.managedObjectContext) var managedObjContext
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.date, order: .reverse)]) var oas: FetchedResults<OA>
     
     var body: some View {
-        ZStack{
-            
-            if hasOA{
-                
+        NavigationStack {
+            ZStack{
+                if showCongratulations {
+                    CongratulationsView()
+                } else if oas.count != 0 {
                 Color(.windowBackgroundColor)
                 
-            } else {
-                
-                Color(red:255.0, green: 255.0, blue: 255.0)
-            }
-            
-            ScrollView(.vertical, showsIndicators: false){
-                
-                if hasOA{
-                    
-                    FilledHomeView()
-                    
-                } else {
-                    
-                   EmptyHomeView()
+                ScrollView(.vertical, showsIndicators: false){
+                    FilledHomeView(oas: oas)
                     
                 }
+            } else {
+                    Color(red:255.0, green: 255.0, blue: 255.0)
+                    EmptyHomeView()
+                }
+                
+                
+                
             }
-
+            
         }
         .onAppear() {
             NotificationManager.instance.requestAuthorization()
@@ -97,9 +94,6 @@ struct ContentView: View {
                 hour: 17,
                 minute: 30
             )
-            
-            UIApplication.shared.applicationIconBadgeNumber = 0
-
         }
     }
 }
