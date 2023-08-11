@@ -27,7 +27,7 @@ class NotificationManager {
         content.title = title
         content.subtitle = subtitle
         content.sound = .default
-        content.badge = 1
+//        content.badge = 1
         
         var dateComponents = DateComponents()
         dateComponents.hour = hour

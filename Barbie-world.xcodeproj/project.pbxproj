@@ -10,6 +10,8 @@
 		64035AC62A2986030048152C /* OAsDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 64035AC42A2986030048152C /* OAsDataModel.xcdatamodeld */; };
 		643C1E262A280F59007028B4 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643C1E252A280F59007028B4 /* DataController.swift */; };
 		643C1E282A28BF73007028B4 /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643C1E272A28BF73007028B4 /* CardsView.swift */; };
+		64C002172A86C76F0058D72E /* Emojis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C002162A86C76F0058D72E /* Emojis.swift */; };
+		64C002192A86E2050058D72E /* Bottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C002182A86E2050058D72E /* Bottom.swift */; };
 		BD1CE5F62A0923450084EEC9 /* Barbie_worldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1CE5F52A0923450084EEC9 /* Barbie_worldApp.swift */; };
 		BD1CE5F82A0923450084EEC9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1CE5F72A0923450084EEC9 /* ContentView.swift */; };
 		BD1CE5FA2A0923460084EEC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD1CE5F92A0923460084EEC9 /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 		64035AC52A2986030048152C /* OADataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OADataModel.xcdatamodel; sourceTree = "<group>"; };
 		643C1E252A280F59007028B4 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		643C1E272A28BF73007028B4 /* CardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
+		64C002162A86C76F0058D72E /* Emojis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emojis.swift; sourceTree = "<group>"; };
+		64C002182A86E2050058D72E /* Bottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bottom.swift; sourceTree = "<group>"; };
 		BD1CE5F22A0923450084EEC9 /* Barbie-world.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Barbie-world.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD1CE5F52A0923450084EEC9 /* Barbie_worldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barbie_worldApp.swift; sourceTree = "<group>"; };
 		BD1CE5F72A0923450084EEC9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,6 +88,8 @@
 				EC608B452A263825009AA382 /* SubOAItems.swift */,
 				BD1CE5F52A0923450084EEC9 /* Barbie_worldApp.swift */,
 				BD50CBB52A20F3250011CB56 /* DetailView.swift */,
+				64C002182A86E2050058D72E /* Bottom.swift */,
+				64C002162A86C76F0058D72E /* Emojis.swift */,
 				BD1CE5F72A0923450084EEC9 /* ContentView.swift */,
 				643C1E272A28BF73007028B4 /* CardsView.swift */,
 				643C1E252A280F59007028B4 /* DataController.swift */,
@@ -192,6 +198,8 @@
 				BD50CBBE2A2792C30011CB56 /* EmptyHomeView.swift in Sources */,
 				BD1CE5F62A0923450084EEC9 /* Barbie_worldApp.swift in Sources */,
 				BD50CBBC2A2789380011CB56 /* CongratulationsView.swift in Sources */,
+				64C002192A86E2050058D72E /* Bottom.swift in Sources */,
+				64C002172A86C76F0058D72E /* Emojis.swift in Sources */,
 				BD50CBBA2A277E7B0011CB56 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -32,7 +32,7 @@ struct FilledHomeView: View {
             }
             VStack(spacing: 20.0){
                 ForEach(oas.filter {$0.isCompleted == false}) { oa in
-                    NavigationLink(destination: EditingDetailView(oa: oa)){
+                    NavigationLink(destination: DetailView(oa: oa)){
                         OACard(oa: oa)
                     }.buttonStyle(.plain)
                 }
@@ -45,7 +45,7 @@ struct FilledHomeView: View {
             
             VStack(spacing: 20.0){
                 ForEach(oas.filter {$0.isCompleted}) { oa in
-                    NavigationLink(destination: EditingDetailView(oa: oa)){
+                    NavigationLink(destination: DetailView(oa: oa)){
                         OACard(oa: oa)
                     }.buttonStyle(.plain)
                 }
@@ -57,8 +57,3 @@ struct FilledHomeView: View {
     }
 }
 
-//struct FilledHomeView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        FilledHomeView()
-//    }
-//}

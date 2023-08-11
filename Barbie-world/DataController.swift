@@ -9,6 +9,8 @@ import SwiftUI
 import CoreData
 
 class DataController : ObservableObject {
+    static let shared = DataController()
+    
     @AppStorage("showCongratulations") var showCongratulations: Bool = false
     
     var container = NSPersistentContainer(name: "OAsDataModel")
@@ -33,7 +35,7 @@ class DataController : ObservableObject {
     
     //MARK: - Adicionar, editar e remover OAs
     
-    func addOA(title: String, subtitle: String, icon: String , context: NSManagedObjectContext, subOAs: [SubOAItem], ceprs : [CardView], evidences: [successParameter] ) {
+    func addOA(title: String, subtitle: String, icon: String , context: NSManagedObjectContext, subOAs: [SubOAItem], ceprs : [[String]], evidences: [successParameter] ) {
         let oa = OA(context: context)
         oa.id = UUID()
         oa.title = title
@@ -46,29 +48,40 @@ class DataController : ObservableObject {
         }
         oa.completedNumber = Int16(subOAs.filter{$0.done}.count)
         
-        save(context: context)
-        
         for subOA in subOAs {
-            addSubOA(oa: oa, name: subOA.descript, isCompleted: subOA.done, context: context)
+            DataController.shared.addSubOA(oa: oa, name: subOA.descript, isCompleted: subOA.done, context: context)
         }
         
-        for view in ceprs {
-            let category = view.card
-            
-            for cepr in view.textFields {
-                addCEPR(oa: oa, name: cepr, category: category, context: context)
-            }
+        for cepr in ceprs[0] {
+            DataController.shared.addCEPR(oa: oa, name: cepr, category: "Conteúdos", context: context)
+        }
+        
+        for cepr in ceprs[1] {
+            DataController.shared.addCEPR(oa: oa, name: cepr, category: "Experiências", context: context)
+        }
+        
+        for cepr in ceprs[2] {
+            DataController.shared.addCEPR(oa: oa, name: cepr, category: "Pessoas", context: context)
+        }
+        
+        for cepr in ceprs[3] {
+            DataController.shared.addCEPR(oa: oa, name: cepr, category: "Redes", context: context)
         }
         
         for evidence in evidences {
-            addEvidence(oa: oa, name: evidence.name, context: context)
+            DataController.shared.addEvidence(oa: oa, name: evidence.name, context: context)
         }
         
         save(context: context)
+        
+        print(ceprs[0])
+        print(ceprs[1])
+        print(ceprs[2])
+        print(ceprs[3])
     
     }
     
-    func editOA(oa: OA, title: String, subtitle: String, icon: String , context: NSManagedObjectContext, subOAs: [SubOAItem], ceprs : [CardView] , evidences: [successParameter]) {
+    func editOA(oa: OA, title: String, subtitle: String, icon: String , context: NSManagedObjectContext, subOAs: [SubOAItem], ceprs : [[String]] , evidences: [successParameter]) {
         oa.title = title
         oa.subtitle = subtitle
         oa.icon = icon
@@ -99,19 +112,17 @@ class DataController : ObservableObject {
         }
         oa.completedNumber = Int16(subOAs.filter{$0.done}.count)
         
-        save(context: context)
-        
         for subOA in subOAs {
             addSubOA(oa: oa, name: subOA.descript, isCompleted: subOA.done, context: context)
         }
         
-        for view in ceprs {
-            let category = view.card
-            
-            for cepr in view.textFields {
-                addCEPR(oa: oa, name: cepr, category: category, context: context)
-            }
-        }
+//        for view in ceprs {
+//            let category = view.card
+//            
+//            for cepr in view.textFields {
+//                addCEPR(oa: oa, name: cepr, category: category, context: context)
+//            }
+//        }
         
         for evidence in evidences {
             addEvidence(oa: oa, name: evidence.name, context: context)
@@ -136,21 +147,15 @@ class DataController : ObservableObject {
         subOA.name = name
         subOA.isCompleted = isCompleted
         subOA.date = Date()
-        
-        save(context: context)
     }
     
     func editSubOA(subOA: SubOA, name: String, isCompleted: Bool, context: NSManagedObjectContext) {
         subOA.name = name
         subOA.isCompleted = isCompleted
-        
-        save(context: context)
     }
     
     func deleteSubOA(subOA: SubOA, context: NSManagedObjectContext) {
         context.delete(subOA)
-        
-        save(context: context)
     }
     
     //MARK: - Adicionar, editar e remover CEP+R
@@ -162,21 +167,15 @@ class DataController : ObservableObject {
         cepr.name = name
         cepr.category = category
         cepr.date = Date()
-        
-        save(context: context)
     }
     
     func editCEPR(cepr: CEPR, name: String, context: NSManagedObjectContext) {
         cepr.name = name
-        
-        save(context: context)
     }
     
     
     func deleteCEPR(cepr: CEPR, context: NSManagedObjectContext) {
         context.delete(cepr)
-        
-        save(context: context)
     }
     
     //MARK: - Adicionar, editar e remover indicador de sucesso
@@ -187,21 +186,15 @@ class DataController : ObservableObject {
         evidence.name = name
         evidence.date = Date()
         evidence.mainOA = oa
-        
-        save(context: context)
     }
     
     func editEvidence(evidence: Evidence, name: String, context: NSManagedObjectContext) {
         evidence.name = name
-        
-        save(context: context)
     }
     
     
     func deleteEvidence(evidence: Evidence, context: NSManagedObjectContext) {
         context.delete(evidence)
-        
-        save(context: context)
     }
     
 }
