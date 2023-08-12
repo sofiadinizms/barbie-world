@@ -26,6 +26,13 @@ struct FilledHomeView: View {
                         .scaledToFit()
                 }).buttonStyle(PlainButtonStyle())
                     .frame(width: 100, height: 36)
+                    .onHover { inside in
+                        if inside {
+                            NSCursor.pointingHand.push()
+                        } else {
+                            NSCursor.pop()
+                        }
+                    }
                 
                 
                 
@@ -35,6 +42,13 @@ struct FilledHomeView: View {
                     NavigationLink(destination: DetailView(oa: oa)){
                         OACard(oa: oa)
                     }.buttonStyle(.plain)
+                        .onHover { inside in
+                            if inside {
+                                NSCursor.pointingHand.push()
+                            } else {
+                                NSCursor.pop()
+                            }
+                        }
                 }
             }
             
@@ -48,6 +62,13 @@ struct FilledHomeView: View {
                     NavigationLink(destination: DetailView(oa: oa)){
                         OACard(oa: oa)
                     }.buttonStyle(.plain)
+                        .onHover { inside in
+                            if inside {
+                                NSCursor.pointingHand.push()
+                            } else {
+                                NSCursor.pop()
+                            }
+                        }
                 }
             }
         }

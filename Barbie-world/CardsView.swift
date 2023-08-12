@@ -16,7 +16,7 @@ extension DetailView {
                     .fontWeight(.bold)
                     .padding(.top, 60)
                 
-                LazyHGrid(rows: [GridItem(.fixed(200))], spacing: 20) {
+                HStack(alignment: .top, spacing: 20) {
                     CardView(card: "Conteúdos", index: 0, color: Color(red: 0.204, green: 0.78, blue: 0.349).opacity(0.1))
                     CardView(card: "Experiências", index: 1, color: Color(red: 1, green: 0.584, blue: 0).opacity(0.1))
                     CardView(card: "Pessoas", index: 2, color: Color(red: 0, green: 0.478, blue: 1).opacity(0.1))
@@ -35,7 +35,7 @@ extension DetailView {
                     .padding()
                     .foregroundColor(.black)
                     .cornerRadius(10)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                    .frame(maxWidth: .infinity, alignment: .topLeading)
                 
                 ForEach(ceprs[index].indices, id: \.self) { i in
                     if !ceprs[index][i].isEmpty {
@@ -55,17 +55,27 @@ extension DetailView {
                     .padding()
                     .textFieldStyle(PlainTextFieldStyle())
                     .background(color).cornerRadius(10)
+                    .onSubmit {
+                        addTextField(index: index)
+                    }
                 
                 Button(action: {
                     addTextField(index: index)
                 }) {
                     Label("Novo", systemImage: "plus")
                 }
-                .frame(maxWidth: 178, maxHeight: .infinity, alignment: .bottomLeading)
+                .frame(maxWidth: 178, maxHeight: .leastNonzeroMagnitude, alignment: .bottomLeading)
                 .padding()
                 .foregroundColor(.black)
                 .buttonStyle(PlainButtonStyle())
                 .cornerRadius(10)
+                .onHover { inside in
+                    if inside {
+                        NSCursor.pointingHand.push()
+                    } else {
+                        NSCursor.pop()
+                    }
+                }
                 
             }
             .padding(EdgeInsets(top: 16, leading: 24, bottom: 6, trailing: 24))

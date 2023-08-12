@@ -14,10 +14,10 @@ struct DetailView: View {
     var oa : FetchedResults<OA>.Element?
     
     @State var randomEmoji = "😬"
-    @State var oaTitle: String = "Nome da OA"
-    @State var oaSubtitle: String = "Descrição do objetivo de aprendizado"
+    @State var oaTitle: String = ""
+    @State var oaSubtitle: String = ""
     @State var items: [SubOAItem] = [
-        SubOAItem(descript: "Insira o nome da task", done: false),
+        SubOAItem(descript: "", done: false),
     ]
     
     let columns = [
@@ -25,7 +25,7 @@ struct DetailView: View {
     ]
     
     @State var successParameters : [successParameter] = [
-        successParameter(name: "Indicador de sucesso")
+        successParameter(name: "")
     ]
     
     @State var barColor: Color = .theme.customBlue

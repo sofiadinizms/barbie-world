@@ -33,6 +33,13 @@ extension DetailView {
                     }
                     .padding(.bottom, 3)
                     .buttonStyle(PlainButtonStyle())
+                    .onHover { inside in
+                        if inside {
+                            NSCursor.pointingHand.push()
+                        } else {
+                            NSCursor.pop()
+                        }
+                    }
                 }
                 Spacer()
                 TextField("Nome da OA", text: $oaTitle)

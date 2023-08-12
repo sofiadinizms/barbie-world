@@ -30,6 +30,13 @@ struct EmptyHomeView: View {
                     .scaledToFit()
             }).buttonStyle(PlainButtonStyle())
                 .frame(width: 170, height: 80)
+                .onHover { inside in
+                    if inside {
+                        NSCursor.pointingHand.push()
+                    } else {
+                        NSCursor.pop()
+                    }
+                }
             
             
         }.frame(width: 643, alignment: .center)
