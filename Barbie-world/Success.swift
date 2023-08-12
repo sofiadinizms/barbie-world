@@ -31,8 +31,12 @@ extension DetailView {
                         //                                        .font(.system(size: 20))
                             .foregroundColor(.black)
                             .onSubmit {
-                                if successParameters.last?.name != "" {
-                                    successParameters.append(successParameter(name: ""))
+                                if successParameters[i].name == "" && (i != successParameters.count - 1) {
+                                    successParameters.remove(at: i)
+                                } else {
+                                    if successParameters.last?.name != "" {
+                                        successParameters.append(successParameter(name: ""))
+                                    }
                                 }
                             }
                     }
@@ -43,9 +47,9 @@ extension DetailView {
                     .cornerRadius(10)
                     .shadow(color: .black.opacity(0.05), radius: 5, x: 0, y: 0)
                     .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                    .inset(by: 0.25)
-                    .stroke(.black.opacity(0.2), lineWidth: 0.5)
+                        RoundedRectangle(cornerRadius: 10)
+                            .inset(by: 0.25)
+                            .stroke(.black.opacity(0.2), lineWidth: 0.5)
                     )
                 }
                 Button(action: {
@@ -64,9 +68,9 @@ extension DetailView {
                         .cornerRadius(10)
                         .shadow(color: .black.opacity(0.05), radius: 5, x: 0, y: 0)
                         .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                        .inset(by: 0.25)
-                        .stroke(.black.opacity(0.2), lineWidth: 0.5)
+                            RoundedRectangle(cornerRadius: 10)
+                                .inset(by: 0.25)
+                                .stroke(.black.opacity(0.2), lineWidth: 0.5)
                         )
                 }
                 .buttonStyle(PlainButtonStyle())

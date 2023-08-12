@@ -11,12 +11,15 @@ struct EmptyHomeView: View {
     var body: some View {
         VStack {
             
-            Text("Você ainda não tem nenhum objetivo de aprendizagem cadastrado")
+            Text("Você ainda não tem nenhum objetivo de\n aprendizagem cadastrado")
                 .bold()
                 .font(.custom("SF Pro Display", size: 32))
-                .lineLimit(2)
+                .multilineTextAlignment(.center)
+                
             
             Image("homeilustration")
+                .resizable()
+                .scaledToFit()
             
             Text("Comece criando um novo objetivo")
                 .font(.custom("SF Pro Display", size: 20))
@@ -39,7 +42,7 @@ struct EmptyHomeView: View {
                 }
             
             
-        }.frame(width: 643, alignment: .center)
+        }
             .padding(EdgeInsets(top: 65, leading: 0, bottom: 65, trailing: 0))
             .foregroundColor(.black)
     }

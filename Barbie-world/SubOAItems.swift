@@ -24,8 +24,12 @@ extension DetailView {
                         .textFieldStyle(.plain)
                         .foregroundColor(.black)
                         .onSubmit {
-                            if items[i].descript != "" {
-                                items.append(SubOAItem(descript: "", done: false))
+                            if items[i].descript == "" && (i != items.count - 1) {
+                                items.remove(at: i)
+                            } else {
+                                if items.last?.descript != "" {
+                                    items.append(SubOAItem(descript: "", done: false))
+                                }
                             }
                             if ((items.count) == (items.filter{ $0.done }.count) && (items.count != 0)) {
                                 barColor = .theme.customGreen
@@ -59,9 +63,9 @@ extension DetailView {
                 .cornerRadius(10)
                 .shadow(color: .black.opacity(0.05), radius: 5, x: 0, y: 0)
                 .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                .inset(by: 0.25)
-                .stroke(.black.opacity(0.2), lineWidth: 0.5)
+                    RoundedRectangle(cornerRadius: 10)
+                        .inset(by: 0.25)
+                        .stroke(.black.opacity(0.2), lineWidth: 0.5)
                 )
             }
             
@@ -86,9 +90,9 @@ extension DetailView {
                     .cornerRadius(10)
                     .shadow(color: .black.opacity(0.05), radius: 5, x: 0, y: 0)
                     .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                    .inset(by: 0.25)
-                    .stroke(.black.opacity(0.2), lineWidth: 0.5)
+                        RoundedRectangle(cornerRadius: 10)
+                            .inset(by: 0.25)
+                            .stroke(.black.opacity(0.2), lineWidth: 0.5)
                     )
                 
                 

@@ -10,6 +10,8 @@ import SwiftUI
 struct OACard: View {
     
     var oa : FetchedResults<OA>.Element
+    @Environment(\.managedObjectContext) var managedObjContext
+    @State var deletingOA = false
     
     var completed: Int = 0
     @State var total: Int
@@ -51,6 +53,23 @@ struct OACard: View {
                         .fontWeight(.light)
                         .opacity(0.6)
                 }
+                Spacer()
+                Button {
+                    deletingOA = true
+                } label: {
+                    Image(systemName: "trash")
+                        .font(.largeTitle)
+                }
+                .buttonStyle(PlainButtonStyle())
+                .alert("Confirmar a exclusão da OA?", isPresented: $deletingOA) {
+                    Button("Sim") {
+                        DataController.shared.deleteOA(oa: oa, context: managedObjContext)
+                        
+                    }
+                    Button("Cancelar", role: .cancel) {}
+                }
+
+                
                 
             }.frame(width: 610, height: 40, alignment: .leading)
             //                .background(.red)
@@ -70,14 +89,14 @@ struct OACard: View {
                     } else if i <= completed && i < total{
                         Rectangle()
                             .foregroundColor(barColor)
-                            .frame(width: 40, height: 6)
+                            .frame(height: 6)
                         Circle()
                             .foregroundColor(barColor)
                             .frame(width: 20, height: 20)
                     } else if i <= completed && i == total {
                         Rectangle()
                             .foregroundColor(barColor)
-                            .frame(width: 40, height: 6)
+                            .frame(height: 6)
                         Circle()
                             .foregroundColor(barColor)
                             .frame(width: 20, height: 20)
@@ -85,7 +104,7 @@ struct OACard: View {
                         Rectangle()
                             .foregroundColor(.black)
                             .opacity(0.1)
-                            .frame(width: 40, height: 6)
+                            .frame(height: 6)
                         Circle()
                             .foregroundColor(.black)
                             .opacity(0.1)
@@ -94,7 +113,7 @@ struct OACard: View {
                         Rectangle()
                             .foregroundColor(.black)
                             .opacity(0.1)
-                            .frame(width: 40, height: 6)
+                            .frame(height: 6)
                         Circle()
                             .foregroundColor(.black)
                             .opacity(0.1)

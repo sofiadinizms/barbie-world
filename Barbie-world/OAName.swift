@@ -19,11 +19,11 @@ extension DetailView {
             
             VStack(alignment: .leading){
                 HStack(alignment: .bottom) {
-                    Text(randomEmoji)
+                    Text(oaEmoji)
                         .font(.system(size: 68))
                     
                     Button(action: {
-                        randomEmoji = Emojis.emoji.randomElement() ?? ""
+                        oaEmoji = Emojis.emoji.randomElement() ?? ""
                     }) {
                         Image("button random")
                             .resizable()

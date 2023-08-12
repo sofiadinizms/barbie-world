@@ -10,10 +10,12 @@ import SwiftUI
 struct DetailView: View {
     @Environment(\.managedObjectContext) var managedObjContext
     @Environment(\.dismiss) var dismiss
+    @State var showingNoNameAlert = false
+
     
     var oa : FetchedResults<OA>.Element?
     
-    @State var randomEmoji = "😬"
+    @State var oaEmoji = "😬"
     @State var oaTitle: String = ""
     @State var oaSubtitle: String = ""
     @State var items: [SubOAItem] = [
@@ -49,7 +51,7 @@ struct DetailView: View {
             }
             .onAppear {
                 if oa != nil {
-                    self.randomEmoji = oa!.icon!
+                    self.oaEmoji = oa!.icon!
                     self.oaTitle = oa!.title ?? ""
                     self.oaSubtitle = oa!.subtitle ?? ""
                     if oa!.evidencies?.allObjects.count != 0 {

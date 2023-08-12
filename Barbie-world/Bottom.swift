@@ -35,11 +35,13 @@ extension DetailView {
                 }
                 if oaTitle != "" {
                     if oa != nil {
-                        DataController.shared.editOA(oa: oa!, title: oaTitle, subtitle: oaSubtitle, icon: randomEmoji, context: managedObjContext, subOAs: items, ceprs: ceprs, evidences: successParameters)
+                        DataController.shared.editOA(oa: oa!, title: oaTitle, subtitle: oaSubtitle, icon: oaEmoji, context: managedObjContext, subOAs: items, ceprs: ceprs, evidences: successParameters)
                     } else {
-                        DataController.shared.addOA(title: oaTitle, subtitle: oaSubtitle, icon: randomEmoji, context: managedObjContext, subOAs: items, ceprs: ceprs, evidences: successParameters)
+                        DataController.shared.addOA(title: oaTitle, subtitle: oaSubtitle, icon: oaEmoji, context: managedObjContext, subOAs: items, ceprs: ceprs, evidences: successParameters)
                     }
                     dismiss()
+                } else {
+                    showingNoNameAlert = true
                 }
             }, label: {
                 Image("Criar")
@@ -53,6 +55,9 @@ extension DetailView {
                     } else {
                         NSCursor.pop()
                     }
+                }
+                .alert("Insira um nome para sua OA", isPresented: $showingNoNameAlert) {
+                    Button("OK", role: .cancel) {}
                 }
         }
         .frame(width: 952, height: 202)
